@@ -1,0 +1,2 @@
+# iPlugWorkshop readme
+Synthesiser Template
