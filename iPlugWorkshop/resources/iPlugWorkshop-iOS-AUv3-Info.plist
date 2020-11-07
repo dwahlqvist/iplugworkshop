@@ -17,11 +17,11 @@
 	<key>CFBundlePackageType</key>
 	<string>XPC!</string>
 	<key>CFBundleShortVersionString</key>
-	<string>0.0.0</string>
+	<string>0.2.0</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>0.0.0</string>
+	<string>0.2.0</string>
 	<key>NSExtension</key>
 	<dict>
 		<key>NSExtensionAttributes</key>
@@ -40,16 +40,16 @@
 					<key>sandboxSafe</key>
 					<true/>
 					<key>subtype</key>
-					<string>lQhx</string>
+					<string>CgmD</string>
 					<key>tags</key>
 					<array>
 						<string>Synth</string>
-						<string>size:{600,600}</string>
+						<string>size:{980,600}</string>
 					</array>
 					<key>type</key>
 					<string>aumu</string>
 					<key>version</key>
-					<integer>0</integer>
+					<integer>512</integer>
 				</dict>
 			</array>
 		</dict>
