@@ -8,7 +8,7 @@
 iPlugWorkshop::iPlugWorkshop(const InstanceInfo& info)
 : Plugin(info, MakeConfig(kNumParams, kNumPresets))
 {
-  GetParam(kParamGain)->InitDouble("Gain", 50., 0., 100.0, 0.01, "%"); // TASK_04
+  GetParam(kParamGain)->InitDouble("Gain", 0., 0., 100.0, 0.01, "%"); // TASK_04
   GetParam(kParamAmpAttack)->InitDouble("Attack", 10., 1., 1000., 0.1, "ms", IParam::kFlagsNone, "ADSR", IParam::ShapePowCurve(3.));
   GetParam(kParamAmpDecay)->InitDouble("Decay", 10., 1., 1000., 0.1, "ms", IParam::kFlagsNone, "ADSR", IParam::ShapePowCurve(3.));
   GetParam(kParamAmpSustain)->InitDouble("Sustain", 50., 0., 100., 1, "%", IParam::kFlagsNone, "ADSR");
@@ -38,7 +38,7 @@ iPlugWorkshop::iPlugWorkshop(const InstanceInfo& info)
     
     pGraphics->LoadFont("Roboto-Regular", ROBOTO_FN);
     pGraphics->LoadFont("Logo", LOGO_FONT_FN);
-    auto knobSVG = pGraphics->LoadSVG(BEFACO_TINYKNOB_FN); /* TASK_02 */
+//    auto knobSVG = pGraphics->LoadSVG(BEFACO_TINYKNOB_FN); /* TASK_02 */
     auto sliderPotSVG = pGraphics->LoadSVG(BEFACO_SLIDEPOT_FN);
     auto sliderHandleSVG = pGraphics->LoadSVG(BEFACO_SLIDEPOTHANDLE_FN);
 
@@ -60,8 +60,8 @@ iPlugWorkshop::iPlugWorkshop(const InstanceInfo& info)
     /* ADD CONTROLS */
     
     // Background control, either a fixed color, gradient, svg or bitmap
-    //pGraphics->AttachPanelBackground(COLOR_LIGHT_GRAY); /* TASK_01 */
-    pGraphics->AttachPanelBackground(IPattern::CreateLinearGradient(bounds, EDirection::Vertical, {{COLOR_LIGHT_GREEN, 0.}, {COLOR_GREEN, 1.}}));
+    pGraphics->AttachPanelBackground(COLOR_LIGHT_GRAY); /* TASK_01 */
+//    pGraphics->AttachPanelBackground(IPattern::CreateLinearGradient(bounds, EDirection::Vertical, {{COLOR_LIGHT_GRAY, 0.}, {COLOR_DARK_GRAY, 1.}}));
      
     // Group controls (background labels)
     pGraphics->AttachControl(new IVGroupControl(controlsArea, " ", 0.f));
@@ -95,12 +95,12 @@ iPlugWorkshop::iPlugWorkshop(const InstanceInfo& info)
 
     /* TASK_03 -- insert some code here! */
     
-    pGraphics->AttachControl(new ISVGKnobControl(masterArea.GetCentredInside(100), knobSVG, kParamGain)); /* TASK_02 */
+//    pGraphics->AttachControl(new ISVGKnobControl(masterArea.GetCentredInside(100), knobSVG, kParamGain)); /* TASK_02 */
     
     // Keyboard
     pGraphics->AttachControl(new IVKeyboardControl(keyboardArea, 36, 64), kCtrlTagKeyboard);
 
-    pGraphics->AttachControl(new IVLabelControl(logoArea, "iPlugWorkshop", DEFAULT_STYLE.WithDrawFrame(false).WithValueText(IText(35., "Logo"))));
+    pGraphics->AttachControl(new IVLabelControl(logoArea, "iPlugWorkshop", DEFAULT_STYLE.WithDrawFrame(false).WithValueText(IText(50., "Logo"))));
     
     pGraphics->SetQwertyMidiKeyHandlerFunc([pGraphics](const IMidiMsg& msg) { pGraphics->GetControlWithTag(kCtrlTagKeyboard)->As<IVKeyboardControl>()->SetNoteFromMidi(msg.NoteNumber(), msg.StatusMsg() == IMidiMsg::kNoteOn); });
   };
@@ -113,14 +113,14 @@ void iPlugWorkshop::ProcessBlock(sample** inputs, sample** outputs, int nFrames)
   mSynth.ProcessBlock(inputs, outputs, 0, 1, nFrames);
 
   /* TASK_02 */
-  
+  /*
   const double gain = GetParam(kParamGain)->Value() / 100.; // TASK_04
  
   for (int s = 0; s < nFrames; s++)
   {
     outputs[0][s] *= gain;
   }
- 
+  */
 
   // copy left hand channel audio to right hand channel
   memcpy(outputs[1], outputs[0], nFrames * sizeof(sample));
