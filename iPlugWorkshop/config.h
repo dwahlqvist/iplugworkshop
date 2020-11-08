@@ -1,7 +1,7 @@
 #define PLUG_NAME "iPlugWorkshop"
 #define PLUG_MFR "DJLastword"
-#define PLUG_VERSION_HEX 0x00010500
-#define PLUG_VERSION_STR "1.5.0"
+#define PLUG_VERSION_HEX 0x00010600
+#define PLUG_VERSION_STR "1.6.0"
 #define PLUG_UNIQUE_ID 'CgmD'
 #define PLUG_MFR_ID 'Acme'
 #define PLUG_URL_STR "https://iplug2.github.io"
