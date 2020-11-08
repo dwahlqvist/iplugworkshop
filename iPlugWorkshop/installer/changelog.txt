@@ -1,6 +1,7 @@
 iPlugWorkshop changelog
 DJLastword
 
+- Changed sin osc to sawtooth
 - Changed gain from % to dB
 - Fixed formatting master
 - Reverted changes to IGraphicsStructs.h (not being pushed to Github)
