@@ -1,4 +1,5 @@
 iPlugWorkshop changelog
 DJLastword
 
-00/00/0000 - v0.1.0 initial release
+Edited colors
+Added gain know
