@@ -51,6 +51,9 @@ iPlugWorkshop::iPlugWorkshop(const InstanceInfo& info)
     const IRECT column2 = controlsArea.GetGridCell(1, 1, 3).GetPadded(-10);
     const IRECT column3 = controlsArea.GetGridCell(2, 1, 3).GetPadded(-10);
     const IRECT masterArea = column3.FracRectVertical(0.75, true);
+    const IRECT masterLabelArea = masterArea.GetGridCell(0, 3, 1);
+    const IRECT masterControlArea = masterArea.GetGridCell(1, 3, 1);
+    const IRECT masterValuesArea = masterArea.GetGridCell(2, 3, 1);
     const IRECT logoArea = column3.FracRectVertical(0.25, false);
     const IRECT ampEG = column2.FracRectVertical(0.5, true);
     const IRECT ampEGLabelsArea = ampEG.GetGridCell(0, 3, 1);
@@ -94,9 +97,10 @@ iPlugWorkshop::iPlugWorkshop(const InstanceInfo& info)
     // Master controls
 
     /* TASK_03 -- insert some code here! */
-    pGraphics->AttachControl(new ITextControl(masterArea.GetGridCell(0, 1, 4).GetFromBottom(20.f), "Gain"));    
+    pGraphics->AttachControl(new ITextControl(masterLabelArea.GetGridCell(0, 1, 1), "Volume"));
     pGraphics->AttachControl(new ISVGKnobControl(masterArea.GetCentredInside(100), knobSVG, kParamGain)); /* TASK_02 */
-    pGraphics->AttachControl(new ICaptionControl(masterArea.GetGridCell(3, 1, 4).GetFromTop(20.f), kParamGain));
+    pGraphics->AttachControl(new ICaptionControl(masterValuesArea.GetGridCell(0, 1, 1), kParamGain));
+
 
     // Keyboard
     pGraphics->AttachControl(new IVKeyboardControl(keyboardArea, 36, 64), kCtrlTagKeyboard);
