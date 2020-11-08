@@ -1,7 +1,5 @@
 iPlugWorkshop changelog
 DJLastword
 
-- Fixed broken formatting.
-- Added gain with 50% default.
-- Changed colors.
+- version bump
 

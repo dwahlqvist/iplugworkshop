@@ -20,17 +20,17 @@
 			<key>type</key>
 			<string>aumu</string>
 			<key>version</key>
-			<integer>1024</integer>
+			<integer>1280</integer>
 		</dict>
 	</array>
 	<key>AudioUnit Version</key>
-	<string>0x00000400</string>
+	<string>0x00000500</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>English</string>
 	<key>CFBundleExecutable</key>
 	<string>iPlugWorkshop</string>
 	<key>CFBundleGetInfoString</key>
-	<string>iPlugWorkshop v0.4.0 Copyright 2020 Acme Inc</string>
+	<string>iPlugWorkshop v0.5.0 Copyright 2020 Acme Inc</string>
 	<key>CFBundleIdentifier</key>
 	<string>com.DJLastword.audiounit.iPlugWorkshop</string>
 	<key>CFBundleInfoDictionaryVersion</key>
@@ -40,11 +40,11 @@
 	<key>CFBundlePackageType</key>
 	<string>BNDL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>0.4.0</string>
+	<string>0.5.0</string>
 	<key>CFBundleSignature</key>
 	<string>CgmD</string>
 	<key>CFBundleVersion</key>
-	<string>0.4.0</string>
+	<string>0.5.0</string>
 	<key>CSResourcesFileMapped</key>
 	<true/>
 	<key>LSMinimumSystemVersion</key>
