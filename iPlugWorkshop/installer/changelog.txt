@@ -1,4 +1,7 @@
 iPlugWorkshop changelog
 DJLastword
 
-00/00/0000 - v0.1.0 initial release
+- Reverted errors due to auto formatting
+- Added gain with 50% default
+- Changed colors
+
