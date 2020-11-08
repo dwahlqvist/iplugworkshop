@@ -61,7 +61,7 @@ iPlugWorkshop::iPlugWorkshop(const InstanceInfo& info)
     
     // Background control, either a fixed color, gradient, svg or bitmap
     // pGraphics->AttachPanelBackground(COLOR_LIGHT_GRAY); /* TASK_01 */
-    pGraphics->AttachPanelBackground(IPattern::CreateLinearGradient(bounds, EDirection::Vertical, {{COLOR_LIGHT_GREEN, 0.}, {COLOR_GREEN, 1.}}));
+    pGraphics->AttachPanelBackground(IPattern::CreateLinearGradient(bounds, EDirection::Vertical, {{COLOR_GREEN, 0.}, {COLOR_BLACK_DROP_SHADOW, 1.}}));
      
     // Group controls (background labels)
     pGraphics->AttachControl(new IVGroupControl(controlsArea, " ", 0.f));
@@ -94,9 +94,10 @@ iPlugWorkshop::iPlugWorkshop(const InstanceInfo& info)
     // Master controls
 
     /* TASK_03 -- insert some code here! */
-    
+    pGraphics->AttachControl(new ITextControl(masterArea.GetGridCell(0, 1, 4).GetFromBottom(20.f), "Gain"));    
     pGraphics->AttachControl(new ISVGKnobControl(masterArea.GetCentredInside(100), knobSVG, kParamGain)); /* TASK_02 */
-    
+    pGraphics->AttachControl(new ICaptionControl(masterArea.GetGridCell(3, 1, 4).GetFromTop(20.f), kParamGain));
+
     // Keyboard
     pGraphics->AttachControl(new IVKeyboardControl(keyboardArea, 36, 64), kCtrlTagKeyboard);
 

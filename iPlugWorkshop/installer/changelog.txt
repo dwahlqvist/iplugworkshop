@@ -1,6 +1,7 @@
 iPlugWorkshop changelog
 DJLastword
 
+- Reverted changes to IGraphicsStructs.h (not being pushed to Github)
 - Reverted errors due to auto formatting
 - Added gain with 50% default
 - Changed colors
